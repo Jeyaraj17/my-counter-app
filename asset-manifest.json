@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/my-counter-app/static/css/main.2d116e70.css",
-    "main.js": "/my-counter-app/static/js/main.c6d56145.js",
+    "main.css": "/my-counter-app/static/css/main.364dad78.css",
+    "main.js": "/my-counter-app/static/js/main.a9e1f993.js",
     "index.html": "/my-counter-app/index.html",
-    "main.2d116e70.css.map": "/my-counter-app/static/css/main.2d116e70.css.map",
-    "main.c6d56145.js.map": "/my-counter-app/static/js/main.c6d56145.js.map"
+    "main.364dad78.css.map": "/my-counter-app/static/css/main.364dad78.css.map",
+    "main.a9e1f993.js.map": "/my-counter-app/static/js/main.a9e1f993.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d116e70.css",
-    "static/js/main.c6d56145.js"
+    "static/css/main.364dad78.css",
+    "static/js/main.a9e1f993.js"
   ]
 }
