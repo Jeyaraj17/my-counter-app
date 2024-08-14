@@ -1,38 +1,116 @@
-.App {
+.body {
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(232, 241, 251, 1) 35%,
+    rgba(186, 214, 242, 1) 100%
+  );
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1 1fr; /* Adjust as needed */
+  margin-top: -10%;
+}
+
+.container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.Heading {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 7rem;
+  color: #e8f1fb;
+  letter-spacing: 0.5rem;
+  top: 10%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   text-align: center;
+  z-index: -1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.progress-div {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.progress-container {
+  margin-top: 2%;
+  position: relative;
+  width: 70%;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.progress-bar {
+  height: 100%;
+  background-color: #76c7c0;
+  transition: width 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin-right: 10px;
+}
+
+.subtract {
+  margin-top: 2%;
+}
+
+.subtract,
+.add {
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.add:hover,
+.subtract:hover {
+  transform: translateY(-6px);
+}
+.add:active,
+.subtract:active {
+  transform: translateY(0);
+}
+
+.undo-redo-div,
+.text {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.text {
+  margin-top: 2%;
+  font-size: 2rem;
+}
+
+.range-box {
+  margin-bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.footer a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.link a {
+  display: inline-block;
+  color: #1976d2;
+  margin-left: 6px;
 }
