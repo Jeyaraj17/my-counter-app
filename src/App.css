@@ -23,8 +23,6 @@
   font-size: 7rem;
   color: #e8f1fb;
   letter-spacing: 0.5rem;
-  top: 10%;
-  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -38,6 +36,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 20px;
 }
 
 .progress-container {
@@ -45,14 +44,14 @@
   position: relative;
   width: 70%;
   height: 30px;
-  background-color: #e0e0e0;
+  background-color: #e8f1fb;
   border-radius: 5px;
   overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
-  background-color: #76c7c0;
+  background-color: #75ade4;
   transition: width 0.5s ease-in-out;
   display: flex;
   align-items: center;
@@ -89,19 +88,8 @@ button {
   text-align: center;
 }
 .text {
-  margin-top: 2%;
+  margin-top: 12%;
   font-size: 2rem;
-}
-
-.range-box {
-  margin-bottom: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer {
-  text-align: center;
-  margin-top: 3%;
 }
 
 .footer a {
@@ -113,4 +101,10 @@ footer {
   display: inline-block;
   color: #1976d2;
   margin-left: 6px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-top: 15%;
+  }
 }

@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Container, Button } from "@mui/material";
+import {
+  Container,
+  Button,
+  Box,
+  Typography,
+  Slider,
+  Link,
+} from "@mui/material";
 import "./App.css"; // Import CSS for animation
 
 export default function App() {
@@ -60,104 +67,122 @@ export default function App() {
   };
 
   return (
-    <Container sx={{ marginTop: "10%", position: "relative" }}>
-      <h4 className="Heading">Counter application</h4>
-      <div className="container">
-        <div className="controls grid">
-          <div className="subtract">
+    <Container>
+      <Typography variant="h3" className="Heading">
+        COUNTER APPLICATION
+      </Typography>
+      <Container
+        sx={{
+          marginTop: "10%",
+          position: "relative",
+          sm: { width: "20px", backgroundColor: "pink" },
+        }}
+      >
+        <Box className="container">
+          <Box className="controls grid">
+            <Box className="subtract">
+              <Button
+                sx={{
+                  fontSize: "1.3rem",
+                  width: "6rem",
+                  height: "6rem",
+                  padding: "4rem",
+                  borderRadius: "5rem",
+                }}
+                onClick={subtract}
+              >
+                Subtract
+              </Button>
+            </Box>
+
+            <Box className="progress-div">
+              <Box className="progress-container">
+                <Box
+                  className="progress-bar"
+                  style={{ width: `${(count / 150) * 100}%` }}
+                ></Box>
+              </Box>
+
+              <Typography variant="p" className="text">
+                {count}%
+              </Typography>
+
+              <Box sx={{ width: "200px" }}>
+                <Slider
+                  onChange={handleChange}
+                  value={count}
+                  max={150}
+                  defaultValue={50}
+                  aria-label="Default"
+                  valueLabelDisplay="auto"
+                />
+              </Box>
+            </Box>
+
+            <Box className="add">
+              <Button
+                sx={{
+                  fontSize: "1.3rem",
+                  width: "6rem",
+                  height: "6rem",
+                  padding: "4rem",
+                  borderRadius: "5rem",
+                  textAlign: "center",
+                }}
+                onClick={add}
+              >
+                Add
+              </Button>
+            </Box>
+          </Box>
+
+          <Box className="undo-redo-div">
             <Button
               sx={{
-                fontSize: "1.3rem",
-                width: "6rem",
-                height: "6rem",
-                padding: "4rem",
-                borderRadius: "5rem",
-              }}
-              onClick={subtract}
-            >
-              Subtract
-            </Button>
-          </div>
-
-          <div className="progress-div">
-            <div className="progress-container">
-              <div
-                className="progress-bar"
-                style={{ width: `${(count / 150) * 100}%` }}
-              ></div>
-            </div>
-
-            <p className="text">{count}%</p>
-
-            <form className="range-box">
-              <input
-                className="range"
-                type="range"
-                onChange={handleChange}
-                value={count}
-                max={150}
-              />
-            </form>
-          </div>
-
-          <div className="add">
-            <Button
-              sx={{
-                fontSize: "1.3rem",
-                width: "6rem",
-                height: "6rem",
-                padding: "4rem",
-                borderRadius: "5rem",
                 textAlign: "center",
+                fontSize: "1.3rem",
+                width: "6rem",
+                height: "6rem",
+                padding: "4rem",
+                borderRadius: "5rem",
               }}
-              onClick={add}
+              onClick={undo}
+              disabled={historyIndex === 0}
             >
-              Add
+              Undo
             </Button>
-          </div>
-        </div>
+            <Button
+              sx={{
+                textAlign: "center",
+                fontSize: "1.3rem",
+                width: "6rem",
+                height: "6rem",
+                padding: "4rem",
+                borderRadius: "5rem",
+                marginBottom: "2%",
+              }}
+              onClick={redo}
+              disabled={historyIndex === history.length - 1}
+            >
+              Redo
+            </Button>
+          </Box>
+        </Box>
+        <Container sx={{ textAlign: "center", marginTop: "3%" }}>
+          <Typography className="footer">
+            Designed by <Link href=".">Jeyaraj</Link> |
+          </Typography>
 
-        <div className="undo-redo-div">
-          <Button
-            sx={{
-              textAlign: "center",
-              fontSize: "1.3rem",
-              width: "6rem",
-              height: "6rem",
-              padding: "4rem",
-              borderRadius: "5rem",
-            }}
-            onClick={undo}
-            disabled={historyIndex === 0}
-          >
-            Undo
-          </Button>
-          <Button
-            sx={{
-              textAlign: "center",
-              fontSize: "1.3rem",
-              width: "6rem",
-              height: "6rem",
-              padding: "4rem",
-              borderRadius: "5rem",
-              marginBottom: "2%",
-            }}
-            onClick={redo}
-            disabled={historyIndex === history.length - 1}
-          >
-            Redo
-          </Button>
-        </div>
-      </div>
-      <footer>
-        <span className="footer">
-          Designed by <a href=".">Jeyaraj</a> |
-        </span>
-
-        <span className="link">
-          <a href=".">github link</a>
-        </span>
-      </footer>
+          <Typography className="link">
+            <Link
+              target="_blank"
+              href="https://github.com/Jeyaraj17/my-counter-app"
+            >
+              github link
+            </Link>
+          </Typography>
+        </Container>
+      </Container>
     </Container>
   );
 }
